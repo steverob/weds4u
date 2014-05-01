@@ -1,0 +1,9 @@
+<!-- app\views\_city_lookup.html.erb -->
+
+<%= form_tag my_path do %>
+    <!-- City: -->
+    <%= select_tag 'country_id' , 
+	    options_from_collection_for_select(@countries, :id, :country_info),
+		:prompt => "Select a City" %>
+	<%= submit_tag 'Go' %>
+ <% end %>

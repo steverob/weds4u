@@ -1,0 +1,35 @@
+
+<!--'views/sessions/new.html.erb' -->
+
+<div class="form1">
+	<%= form_tag sessions_create_path, :method => :get do %>
+		<fieldset>
+			<legend>Please Log In</legend>
+    			<div>
+					<%= label_tag :name,'Name:' %>
+					<%= text_field_tag :name, params[:name] , :autofocus => true %>
+				</div>
+   				<div>
+					<%= label_tag :password, 'Password:' %>
+					<%= password_field_tag :password, params[:password] %>
+				</div>
+				<div>
+					</br>
+					<%= submit_tag "Login" %>
+					<p><%= link_to "Forgotten password?", new_password_reset_path %></p>
+		
+		<div class="field">
+		  <%= check_box_tag :remember_me, 1, params[:remember_me] %>
+		  <%= label_tag :remember_me %>
+		</div>
+
+				</div>
+		</fieldset>
+	<% end %> <!-- form_tag -->
+	</br>
+	<%= link_to 'Back', :back %>
+	
+
+
+	
+</div>

@@ -1,0 +1,19 @@
+
+/* divs at top of all pages. Associated code found in "views/layouts/application.html.erb" */
+	
+#footer{
+	height: 2em;
+	width: 59em;
+	float: right;
+	position:absolute;
+	bottom:0;
+	text-align: right;
+	line-height: 2em;
+	background-colors: #fcc; /* pink */
+	borders: solid black 0.1em;  
+}
+
+#footer span{
+	font-size: 0.7em;
+	margin-right: 2em;
+}

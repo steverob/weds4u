@@ -1,0 +1,10 @@
+<!-- 'views/users/edit.html.erb' -->
+
+
+<%= render "/error_messages", :message_header => "Cannot save: ", :target => @user %> 
+
+<div class="form1">
+	<div class="main-title">Edit Account Details</div>
+	<%= render 'form' %>
+	<%= link_to 'Back', :back %>
+</div>

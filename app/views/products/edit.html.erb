@@ -1,0 +1,12 @@
+<!-- app\views\products\edit.html.erb -->
+<%= render "/error_messages", :message_header => "Cannot save : ", :target => @product %> 
+
+<div class="form1">
+	<div class="main-title">Edit a Product</div>
+	<%= render 'form' %>
+
+	<%=  link_to 'Show', @product %> |
+	<%#= link_to 'Back', products_path %>
+	<%#= link_to 'Back', :back %>
+	<%=  link_to_function "Back", "history.back()" %>
+</div>

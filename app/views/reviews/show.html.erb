@@ -1,0 +1,27 @@
+<div class="centre-content"> 
+	<p>
+	  <!-- <b>Product:</b> -->
+	  <%#= @review.product_id %>
+	  <%= @review.product.title %>
+	</p>
+
+	<p>
+	  <b>Name:</b>
+	  <%= @review.name %>
+	</p>
+
+	<p>
+	  <b>Review text:</b>
+	  <%= @review.review_text %>
+	</p>
+
+	<p>
+	  <b>No of stars:</b>
+	  <%= @review.no_of_stars %>
+	</p>
+
+
+	<%#= link_to 'Edit', edit_review_path(@review) %> 
+	<%#= link_to 'Back', reviews_path %>
+	<%= link_to 'Back', :back %>
+</div>

@@ -1,0 +1,220 @@
+<!-- app\views\layouts\application.html.erb -->
+<!DOCTYPE html>
+<html>
+	<head>
+		
+		<title>Your Dream Wedding</title>
+		
+		<%= stylesheet_link_tag "application", :media => "all" %>
+		<%= javascript_include_tag "application" %>
+		<%= csrf_meta_tags %>
+		
+	</head>
+	<body>
+		<div id="main-div">
+		
+			<div id="navbar">
+				<ul>
+					<% if logged_in? %>
+						<%= logged_in_as %> <%= acting_role %> &nbsp; 
+					<% end %>
+					
+					<% if admin? %>						
+						<li> <%= link_to "Users", "" , :class => active_menu("users") %> 
+						<ul>
+							<li> <%= link_to "Users" , users_path %> </li>
+							<li> <%= link_to "Edit profile" , edit_user_path(session[:user_id]) %> </li>
+						</ul>	
+						<li> <%= link_to "Countries", countries_path, :class => active_menu("countries") %> </li>
+						<li> <%= link_to "Reviews", reviews_path, :class => active_menu("reviews") %> </li>
+					<% end %>
+
+					<% if not logged_in? %>
+						<li> <%= link_to "Log In", login_path, :class => active_menu("sessions") %> </li>
+						<li> <%= link_to "Register", new_user_path, :class => active_menu("users") %> </li>
+					<% else %>
+						<li>   <%= link_to "Log out", logout_path, :class => active_menu("sessions") %> </li>
+					<% end %>
+					<li> <%= link_to "Home", root_path, :class => active_menu("products") %> </li>
+				</ul>
+			</div> <!-- navbar end -->
+			
+			
+
+			<div id="layout-top">
+			
+			<div id="date">
+				<span> <%= the_date %> </span>	
+			</div>
+			
+				<div id="search-new-product">
+					
+					<div id="book-search">
+						<!-- add code to display a search box in this view, a 'partial' called _search.html.erb and a model method called 'search' -->
+						<%#= render(:partial => '/search', 
+                                   :locals=> {:my_path => "/products/search" })
+						%>
+					
+						<%#= render(:partial => '/city_lookup', 
+                                 :locals => {:countries => @countries = Country.find(:all), 
+                                 :my_path => '/products/display_products_by_city' })
+						%>
+						
+						<%= render(:partial => '/multi_search', 
+                                 :locals => {:countries => @countries = Country.find(:all), :regions => @regions = Region.find(:all),
+                                 :my_path => '/products/multi_find' })
+						%>
+
+						
+					</div>	
+
+					
+					<div id="new-product">
+						<% if admin? %>
+							<%= button_to 'New Product', new_product_path, :method => :get, 
+								:title=>"select to add new product details ..."%>
+						<% end %>
+					</div>
+					
+          
+					<!-- a button named 'All' calls the index action of the products controller -->
+					<div id="book-all-search">
+						<%= button_to "All", controller: :products, action: :index %>
+						
+					</div>
+					
+					
+				</div>
+				
+				<!-- 
+				<div id="session-display">
+					session user_id <%#= session[:user_id] %>
+				</div>
+				-->
+			</div>
+			
+		
+						
+				<div id="title-top">				
+					<%= image_tag "Title.jpg", :size => "300x100" %>
+				</div>
+
+				
+				<div id="heartx">				
+					<%= image_tag "heartx.jpg", :size => "50x50" %>
+				</div>
+	
+				
+		
+				<div id="mainbar">	
+					<ul>				
+						<li> <%= link_to "Transport", "" , :class => active_menu("transport") %> 
+						<ul>
+							<li> <%= link_to "First Choice", "http://www.firstchoiceweddingcars.co.uk" %> </li>  
+							<li> <%= link_to "Premier", "http://www.premiercarriage.co.uk" %> </li>	
+						</ul>	
+						
+						<li> <%= link_to "Flowers", "" , :class => active_menu("flowers") %> 
+						<ul>
+							<li> <%= link_to "Amanda Roy" , "http://www.amandarefoy.co.uk/" %> </li>
+							<li> <%= link_to "Kopends" , "http://www.kopendcreations.co.uk/" %> </li>
+						</ul>	
+						
+						<li> <%= link_to "Bands/DJs", "" , :class => active_menu("Bands/DJs") %> 
+						<ul>
+							<li> <%= link_to "Bliss" , "http://blissweddingdj.com" %> </li>
+							<li> <%= link_to "Alive" , "http://www.alivenetwork.com/weddingmusic.asp" %> </li>
+						</ul>	
+						
+						
+						<li> <%= link_to "Photography", "" , :class => active_menu("photography") %> 
+						<ul>
+							<li> <%= link_to "Our Wedding" , "http://www.ourweddingmemories.co.uk" %> </li>
+							<li> <%= link_to "Adorn" , "http://www.leicesterweddingphotography.com/" %> </li>
+						</ul>	
+						
+						
+						<li> <%= link_to "Hair & Beauty", "" , :class => active_menu("hair & beauty") %> 
+						<ul>
+							<li> <%= link_to "Bridal Hair" , "http://www.bridalhairbeauty.co.uk/about/about.asp" %> </li>
+							<li> <%= link_to "Orchid" , "http://www.theorchidbeauty.com/" %> </li>
+						</ul>	
+						
+						
+						
+						<li> <%= link_to "Caterers", "" , :class => active_menu("caterers") %> 
+						<ul>
+							<li> <%= link_to "Stones Events" , "http://www.stonesevents.co.uk" %> </li>
+							<li> <%= link_to "Dimblebee" , "http://www.dimblebeecatering.co.uk/" %> </li>
+						</ul>	
+						
+						
+						<li> <%= link_to "Wedding Attires", "" , :class => active_menu("wedding attires") %> 
+						<ul>
+							<li> <%= link_to "Allure Bridals" , "http://www.allurebridals.com" %> </li>
+							<li> <%= link_to "BHLDN" , "http://www.bhldn.com/" %> </li>
+						</ul>
+						
+						<li> <%= link_to "Venues", {controller: 'products', action: 'index'}, :class => active_menu("products") %> </li>	
+				
+				</div> 
+				
+			
+			
+
+			<!-- include selected page -->
+			<!-- display error messages at the bottom of the header of every page 
+		
+				flash is a session variable, you can store error messages on one page
+				and access them on another, it is a special 'hash' of symbols, it is cleared 
+				after every request so it is only available for the next call
+				-->
+				<div id="feedback-top" style = "text-align: left"> 
+					<!-- to display all params[] add an "=" to <%= debug params.to_s %> -->
+					<% debug params.to_s %> 
+					<!-- display in red -->
+					<% if flash[:alert] %>
+						<div id="alert" ><%= flash[:alert] %></div>
+					<% end %>
+					<!-- display in green -->
+					<% if flash[:notice] %>
+						<div id="notice"><%= flash[:notice] %></div>
+					<% end %>		
+				</div>
+			<div class="yield">
+				<%= yield %>
+			</div>
+			
+			<center>
+				<div id="bridal-magazine">
+					<header> Click Images for Bridal Magazine </header>
+					
+					<%= link_to (image_tag "bellebridal.jpg", :size => "150x200"), 
+									"http://www.bellebridalmagazine.com", :title=> 'www.bellebridalmagazine.com' %>
+				
+					<%= link_to (image_tag "bridal_magazine.jpg", :size => "150x200"), 
+									"http://www.bridalmagazine.com", :title=> 'www.bridalmagazine.com' %>
+					
+					<%= link_to (image_tag "uengaged.jpg", :size => "150x200"), 
+									"http://www.utterlyengaged.com/e-magazine/home", :title=> 'www.utterlyengaged.com/e-magazine/home' %>
+									
+									
+										
+					<%= link_to (image_tag "facebook.jpg", :size => "50x50"), 
+										"https://www.facebook.com/weds4u123?ref=hl", :title=> 'www.facebook.com' %>
+					
+					<%= link_to (image_tag "twitter.jpg", :size => "50x50"), 
+										"https://twitter.com/Weds4U", :title=> 'www.twitter.com' %>
+										
+					<%= link_to (image_tag "youtube.jpg", :size => "50x50"), 
+										"http://www.youtube.com/user/TheForeverTV?feature=watch", :title=> 'www.youtube.com' %>	
+				
+				</div>
+			</center>
+				
+		</div>
+	</body>
+</html>
+
+
+				

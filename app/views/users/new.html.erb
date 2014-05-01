@@ -1,0 +1,13 @@
+<!-- this page uses a form to create a new account the error 
+	message partial is used to display errors when attempting 
+    to save / register a new user -->
+		
+<%= render "/error_messages", 
+			:message_header => "Cannot save: ", 
+			:target => @user %> 
+
+<div class="form1">
+	<div class="main-title">New Account</div>
+	<%= render 'form' %>
+	<%= link_to 'Back', :back %>
+</div>

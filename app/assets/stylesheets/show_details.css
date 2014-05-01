@@ -1,0 +1,50 @@
+
+/* for usage see 'products/show.html.erb' */
+
+#all-details {
+	width: 40em;
+	/* left right margins set to auto to centre div */
+	margin-left: auto; 
+	margin-right: auto;
+	/* margins top right bottom left */
+	margins: 0.5em 0em 0em 10em;
+	padding: 1em 0em 1em 1em;
+	font-family: serif;
+	font-weight: normal;
+	borders: 0.1em solid red;
+
+} 
+
+#show-img {
+	width: 12em;
+	float: left;  
+	/* margins top right bottom left */
+	margin: 0em 0em 0em 2em;
+	padding: 0em 0em 0em 0em;
+	/*  takes the width of the image */
+	font-familys: serif;
+	borders: 0.1em solid blue;
+} 
+
+#description {
+	width: 14.5em;
+	max-height:20em;
+	overflow: auto;
+	float: left;
+	margin: 1em 0em 0em 0em;
+	padding: 0em 0em 0em 1em;	
+	font-style: italic;
+	line-height: 1.1em;
+	word-wrap: break-word;
+	color: black;
+	borders: 0.1em solid black;
+}
+
+#book-venue {
+	width: 12em;
+	borders: solid black 0.1em;
+}
+
+.yield {
+margin-top:1em;
+}

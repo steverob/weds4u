@@ -1,0 +1,8 @@
+<!-- app\views\products\new.html.erb -->
+<%= render "/error_messages", :message_header => "Cannot save: ", :target => @product %> 
+
+<div class="form1">
+	<div class="main-title">New Product</div>
+	<%= render 'form' %>
+	<%= link_to 'Back', products_path %>
+</div>

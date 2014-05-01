@@ -1,0 +1,14 @@
+    <p><i><%= @slider.name %></i></p>
+
+    <div id="slider">
+         <%=  render :partial => "show_slide" %>
+         </div>
+
+         <%= periodically_call_remote :update    => 'slides',
+                                         :url       => { :action => :show_slide },
+                                         :frequency => 2.0 %>
+	
+	
+	
+	
+

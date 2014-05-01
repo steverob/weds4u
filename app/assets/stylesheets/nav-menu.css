@@ -1,0 +1,151 @@
+
+.feed-back{
+	width: 57em;
+	height: 1.3em;
+	padding: 0.5em 0em 0.3em 2em;
+	font-family: verdana, arial, helvetica ;
+	font-style: italic;
+	margin-right: auto;
+	margin-left: auto;
+	background-color: #ccc ;
+}
+	
+#navbar{
+	height: 3.1em;
+	width: 45em;
+	margin-right: auto;
+	margin-left: 10em;
+	borders: 0.1em solid red; 
+}
+
+#navbar ul {
+	font-size: 0.8em;
+	float: right;
+	font-weight: bold;
+}
+
+#navbar li {
+	list-style: none;
+	float: right;	
+}
+
+#navbar li a{
+	display: block;
+	padding: 0.2em 0.5em;
+	text-decoration: none;
+	border: 0.1em solid #ddd;
+}
+
+.highlight_active{
+	background-color: #CD853F; 	/* Brown */
+}
+
+.highlight_inactive{
+	background-color: #40E0D0; 	/* Aqua */
+}
+
+#navbar  li a:hover {             		
+    color: #000;               	/* black */      		
+    background-color: #fff;   	/* white */	
+} 
+#navbar li:hover ul{
+	display: block;
+	position: absolute;
+}
+
+#navbar li ul {
+	display: none;
+	width: 7em;
+}
+
+#navbar li:hover li{
+	float: none;
+}
+
+#navbar li:hover li a{
+	background-color: #ccc;  		/* dark grey */
+	border-top: 0.1em solid #ddd; 	/* light grey */
+}
+
+#navbar li li a:hover{
+	background-color: #fff; /* white */
+}
+
+
+
+.feed-back{
+	width: 57em;
+	height: 1.3em;
+	padding: 0.5em 0em 0.3em 2em;
+	font-family: verdana, arial, helvetica ;
+	font-style: italic;
+	margin-right: auto;
+	margin-left: auto;
+	background-color: #ccc ;
+}
+	
+#mainbar{
+	height: 3.1em;
+	width: 60em;
+	margin-right: auto;
+	margin-left: auto;
+	borders: 0.1em solid red; 
+	position: absolute;
+	top:180px;
+	right:3em;
+}
+
+#mainbar ul {
+	font-size: 1em;
+	float: right;
+	font-weight: bold;
+}
+
+#mainbar li {
+	list-style: none;
+	float: right;	
+}
+
+#mainbar li a{
+	display: block;
+	padding: 0.3em 0.7em;
+	text-decoration: none;
+	border: 0.1em solid #ddd;
+}
+
+.highlight_active{
+	background-color: #CD853F; 	/* Brown */
+}
+
+.highlight_inactive{
+	background-color: #40E0D0; 	/* Aqua */
+}
+
+#mainbar  li a:hover {             		
+    color: #000;               	/* black */      		
+    background-color: #fff;   	/* white */	
+} 
+#mainbar li:hover ul{
+	display: block;
+	position: absolute;
+}
+
+#mainbar li ul {
+	display: none;
+	width: 7em;
+}
+
+#mainbar li:hover li{
+	float: none;
+}
+
+#mainbar li:hover li a{
+	background-color: #ccc;  		/* dark grey */
+	border-top: 0.1em solid #ddd; 	/* light grey */
+}
+
+#mainbar li li a:hover{
+	background-color: #fff; /* white */
+}
+
+

@@ -1,0 +1,27 @@
+<div class="form1">
+
+	<fieldset>
+        <legend>User Profiles</legend>
+        <!--<% if notice %>
+				<p id="notice ><%#=notice %></p>
+			<% end %>
+		-->
+		</br>
+		<table>
+			<% @users.each do |user| %>
+				<tr>
+					<td><%= user.name %></td>
+					<td></td>
+					<td><%= link_to 'Edit', edit_user_path(user) %></td>
+					<td></td>
+					<td><%= link_to 'Delete', user, confirm: 'Are you sure?', method: :delete %></td>
+				</tr>
+			<% end %>
+		</table>
+
+		</br>
+
+		<%#= link_to 'New User', new_user_path %>
+		<%= link_to 'Back', :back %>
+	</fieldset>
+</div>

@@ -1,0 +1,10 @@
+
+<!-- app\views\reviews\new.html.erb -->
+<%= render "/error_messages", :message_header => "Cannot save: ", :target => @review %> 
+
+<div class="form1">
+	<div class="main-title">New Review for "<%= @review.product.title %>"</div>
+	<%= render 'form' %>
+	<%#= link_to 'Back', reviews_path %>
+	<%= link_to_function "Back", "history.back()" %>
+</div>

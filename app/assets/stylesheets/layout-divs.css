@@ -1,0 +1,132 @@
+
+/* divs at top of all pages. Associated code found in "views/layouts/application.html.erb" */
+	
+#layout-top{
+	height: 9em;
+	borders: solid black 0.1em;  
+}
+
+
+#title-top{
+	height: 4em;
+	widths: 16em;
+	background-colors: #fcc; /* pink */
+	borders: Pink 0.1em; 
+	position: absolute;
+	top:10px;
+	right:40em;
+	size: 15px;
+}
+
+#heartx{
+	height: 4em;
+	widths: 16em;
+	background-colors: #fcc; /* pink */
+	borders: Pink 0.1em; 
+	position: absolute;
+	top:49px;
+	right:41em;
+	size: 15px;
+}
+
+
+#search-new-product{
+	height: 3em;
+	width: 34em; /* 24em 58em; */
+	/* top right bottom left */
+	padding: 1em 0em 0em 1em;
+	background-colors: #aaa; /* dark grey */
+	borders: solid blue 0.1em;
+}
+
+#date{ 
+	width: 23em; /* 13.5em 58em; */
+	float: right;
+	background-color: 
+	borders: solid red 0.1em;
+	position: absolute;
+	borders: solid black 0.1em; 
+	top: 35px;
+	right: 257px;
+}
+
+#book-search{ 
+	width: 23em; /* 13.5em 58em; */
+	float: right;
+	background-color: 
+	borders: solid red 0.1em;
+	position: absolute;
+	borders: solid black 0.1em; 
+	top: 82px;
+	right: 88px;
+}
+
+#book-all-search{ 
+	width: 2.5em; /* 13.5em 58em; */
+	float: right;
+	padding: 0em 0em 0em 0.2em;
+	borders: solid green 0.1em;
+	position: absolute;
+	top:103px;
+	right:195px;
+	size: 15px;
+}
+	
+#new-product{ 
+	width: 6.5em;
+	float: right;
+	padding: 0em 0em 0em 0.2em;
+	background-colors: #f00; /* red */
+	position: absolute;
+	borders: solid black 0.1em; 
+	top: 112px;
+	right:73px;
+}
+
+/* display 'flash' session/hash error messages at the bottom of the header 
+of each page see "views/layouts/application.html.erb" */
+#feedback-top{
+	height: 1.4em;
+	line-height: 1.4em;
+	/* top right bottom left */
+	padding: 0em 0em 0em 1em;
+	background-colors: #c51; /* dark orange */
+	borders: solid black 0.1em;
+}
+
+#session-display{
+	background-color: #f99; /* dark pink */
+}
+
+#rating{
+	font-size: 0.8em;
+}
+
+#rating-buttons{
+	width: 17em;
+	borders: solid black 0.1em;
+}
+
+#slider-wrapper{
+	height: 3.1em;
+	width: 60em;
+	margin-right: auto;
+	margin-left: auto;
+	borders: 0.1em solid red; 
+	position: absolute;
+	top:50em;
+	right:0em;
+}
+
+
+
+#slider-range{ 
+	width: 23em; /* 13.5em 58em; */
+	float: right;
+	background-color: 
+	borders: solid red 0.1em;
+	position: absolute;
+	borders: solid black 0.1em; 
+	top: 82px;
+	right: 88px;
+}

@@ -1,0 +1,25 @@
+<!-- app\views\_multi_search.html.erb -->
+
+<%= form_tag my_path, :method=>'post', :multipart => true do %>
+  <!--  City: -->
+    <%=  select_tag ('country_id') , options_from_collection_for_select(@countries, :id, :country_info, 0 ),
+		:prompt => "Select a City" %>
+		
+    <%=  select_tag ('region_id') , options_from_collection_for_select(@regions, :id, :region_info, 0 ),
+		:prompt => "Select a Region" %>
+		
+   <!-- Key word:-->
+    <%= text_field_tag :search_string %>
+    <%= submit_tag 'Search' %>
+<% end %>
+
+<div id="slider-range">
+<%# if session[:controller] == "venues" %>
+	    <label for="range">
+			<input type="range"  style="margin-top:-15em; margin-left: 2em;" name="range" id="range" min="0" max="1000" step="5" value="<%#= @price_limit || 0  %>"/>
+		</label> 				
+		<output for="range" class="output"></output>
+		<!--  $('#range').mouseout(function(){  $('#mobile_search_form').submit();  }) -->
+
+ </div>
+

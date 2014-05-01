@@ -1,0 +1,77 @@
+<%= form_for(@product) do |f| %>
+
+	<div class="field">
+		<%= f.label :title, "Title:" %><br />
+		<%= f.text_field :title, :size => 42 %>
+	</div>
+	
+	<div class="field">
+		<%= f.label :description, "Description:" %><br />
+		<%= f.text_area :description, :rows=> 12, :cols=> 35  %>
+	</div>
+  
+  <div class="field">
+		<%= f.label :country_id, "City:" %><br />
+		<%#= f.text_field :country, :size => 20  %>
+		<%= f.collection_select :country_id, Country.find( :all),
+			:id,:country_info, {:include_blank => "Please Select"} %>
+	</div>
+	
+	<div class="field">
+		<%= f.label :capacity, "Capacity:" %><br />
+		<%= f.text_field :price, :size => 20  %>
+	</div>
+	
+	<div class="field">
+		<%= f.label :price, "Price:" %><br />
+		<%= f.text_field :price, :size => 20  %>
+	</div>
+	
+	<div class="field">
+		<%= f.label :img_url, "Image url:" %><br />
+		<%#= f.text_field :img_url, :size => 20, :disabled => true %>
+		<%= file_field :product, :img_url, :size => 42 %>
+	</div>
+	
+
+	<div class="field">
+		<%#= f.label :date_available, "Date Available:" %><br />
+		<!-- the line below is commented out -->
+		<%#= f.date_select :date_published %>
+		<div class="datepicker">
+			<%#= @product.date_available_format %> 
+			<%#= f.datepicker :date_published, :size => 20%>
+		</div>
+	</div>
+	
+	<div class="field">
+		<%= f.label :contact, "Contact:" %><br />
+		<%= f.text_field :contact, :size => 20  %>
+		<%#= f.select :contact, 0..100, :size => 6 %>
+	</div>
+  
+  	  <div class="field">
+		<%= f.label :telephone, "Telephone:" %><br />
+		<%= f.text_field :telephone, :size => 20  %>
+		<%#= f.select :telephone, 0..100, :size => 6 %>
+	</div>
+	
+  	<div class="field">
+		<%= f.label :website, "Website:" %><br />
+		<%= f.text_field :website, :size => 20  %>
+		<%#= f.select :website, 0..100, :size => 6 %>
+	</div>
+	
+	  <div class="field">
+		<%= f.label :address, "Address:" %><br />
+		<%= f.text_field :address, :size => 20  %>
+		<%#= f.select :address, 0..100, :size => 6 %>
+	</div>
+	
+
+	<div class="actions">
+		<%= f.submit %>
+	</div>
+	
+<% end %>
+

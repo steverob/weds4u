@@ -1,0 +1,41 @@
+<!-- 'views/users/_form.html.erb' 
+
+	this form is used to create / edit a new user, a user has a
+	unique name, the password is enterd twice for confirmation,
+	administration rights can be granted by another administrator 
+-->
+
+<div class="form1">
+
+	<%= form_for(@user) do |f| %>
+
+		<div class="field">
+			<%= f.label :name, 'Name:' %> <br>
+			<%= f.text_field :name, :autofocus => true %>
+		</div>
+		<div class="field">
+			<%= f.label :password, 'Password:' %>
+			<%= f.password_field :password , size: 40 %>
+		</div>
+  
+		<div class="field">
+			<%= f.label :password_confirmation, 'Confirm:' %>
+			<%= f.password_field :password_confirmation, size: 40 %>
+		</div>
+  
+		<div class="field">
+			<% if admin? %>
+				<%= f.label :role, 'Role:' %>
+				<%#= f.text_field :role %>
+				<!-- a drop down selection box, limits valid input to just two options -->
+				<%= f.select :role, [["Customer","customer"],["Administrator","admin"]]%>
+			<% end %>
+		</div>
+  
+		<div class="actions">
+			<%= f.submit "Register User" %>
+		</div>
+  
+	<% end %>
+
+</div>

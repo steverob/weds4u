@@ -1,0 +1,85 @@
+<%= stylesheet_link_tag 'pasacal.css' %>
+<div id="all-content"> 
+			
+			
+		<div class="slider-wrapper theme-pascal">
+        <div id="slider" class="ramblingSlider">
+            <%= image_tag "slide1.jpg", :width => "300" %>
+            <%= image_tag "slide2.jpg", :width => "300" %>
+            <%= image_tag "slide3.jpg", :width => "300" %>
+            <%= image_tag "slide4.jpg", :width => "300" %>  
+			<%= image_tag "slide5.jpg", :width => "300" %>
+			<%= image_tag "slide6.jpg", :width => "300" %>
+        </div>
+    </div>
+
+
+	
+	</br>			
+	</br>	
+	</br>	
+	</br>	
+	</br>
+	</br>
+	<% @products.each do |product| %>
+		<div id="product-box">
+			<fieldset> 
+				
+				<div id="img-box", title="select image for more details ...">
+				  <% if not product.img_url.blank? %>
+					<%= link_to (image_tag product.img_url, :size => "100x125"), product %>
+				  <% else %>
+					<%= link_to (image_tag("no-image.jpg", :size => "100x125")), product %>
+				  <% end %>
+				</div>
+
+				
+				
+				<div id="details-box">
+					<div id="title-box">				
+						<%=  product.title %>
+					</div>
+					
+					          
+					<div id="city-box">
+						<%#= product.country_id %>
+						<%#= product.country.city %>
+					</div> 
+					
+					<div class="star-rating">
+							<%= link_to "Please add a review", 
+							{controller: 'reviews', action: 'new', id: product.id } %>
+					</div>
+					
+					
+					<div id="admin-box">
+						<% if admin? %> 
+							<%#= link_to 'Show', product %>
+							<%= link_to 'Edit', edit_product_path(product) %>
+							<%= link_to 'Delete', product, confirm: 'Are you sure?', method: :delete %>
+						<% end %>
+					</div>
+					
+				</div>
+				
+			</fieldset> 
+		</div>
+	<% end %>
+	
+	
+	<div id="video">
+		<%= video_tag "video.3gp", :size => "320x240", :controls => true %>	
+	</div>
+	
+	<br />
+	
+	<div id="pagination">
+			<%= will_paginate @products %>	
+			<%= paginate @products %>	
+	</div>	
+</div>
+
+
+
+
+

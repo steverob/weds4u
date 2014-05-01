@@ -1,0 +1,36 @@
+<%= form_for([@booking.product, @booking]) do |f| %>
+	<%= f.hidden_field :product_id %>
+	
+	<div class="field">
+		<%= f.label :name, "first name:" %><br />
+		<%= f.text_field :name, :size => 20  %>
+	</div>
+	
+	<div class="field">
+		<%= f.label :tel, "telephone:" %><br />
+		<%= f.text_field :tel, :size => 20  %>
+	</div>
+	
+	
+	<div class="field">
+		<%= f.label :address, "address:" %><br />
+		<%= f.text_field :address, :size => 20  %>
+	</div>
+	
+	
+	<div class="field">
+		<%= f.label :guests_count, "number of guests:" %><br />
+		<%= f.text_field :guests_count, :size => 20  %>
+	</div>
+
+	<div class="field">
+		<%= f.label :date, "Date:" %><br />
+		<%= f.text_field :date, id: "booking_date" %>
+	</div>
+	
+	<div class="actions">
+		<%= f.submit %>
+	</div>
+	
+<% end %>
+

@@ -1,0 +1,34 @@
+
+<div class="centre-content"> 
+	<div class="main-title">All reviews:</div>
+
+	<table>
+	  <tr>
+		<th>Product</th>
+		<th>Name</th>
+		<th>Review text</th>
+		<th>No of stars</th>
+		<th></th>
+		<th></th>
+		<th></th>
+	  </tr>
+
+	<% @reviews.each do |review| %>
+	  <tr>
+		<%#= review.product_id %>
+		<td><%= review.product.title %></td>
+		<td><%= review.name %></td>
+		<td><%= review.review_text.truncate(35) %></td>
+		<td><%= review.no_of_stars %></td>
+		<td><%= link_to 'Show', review %></td>
+		<td><%= link_to 'Edit', edit_review_path(review) %></td>
+		<td><%= link_to 'Destroy', review, confirm: 'Are you sure?', method: :delete %></td>
+	  </tr>
+	<% end %>
+	</table>
+
+	<br />
+
+	<%#= link_to 'New Review', new_review_path %>
+	<%= link_to 'Back', :back %>
+</div>
